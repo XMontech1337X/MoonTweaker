@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://github.com/XMontech1337X/MoonTweaker/blob/main/.github/Preview-en.png"/><br/><br/>
+<img src="https://github.com/XMontech1337X/MoonTweaker/blob/main/.github/Preview-ko.png"/><br/><br/>
  
 <div align="center" style="margin: 20px 0; text-align: center;">
  
@@ -14,7 +14,7 @@
 
 <!-- language --> 
 <div align="center">
-  <h1>🌍 Available Languages:</h1>
+  <h1>🌍 사용 가능한 언어:</h1>
   <a href="https://github.com/XMontech1337X/MoonTweaker/blob/main/README.md">
     <img src="https://hatscripts.github.io/circle-flags/flags/us.svg" width="40">
   </a>
@@ -31,26 +31,26 @@
 </div>
 
 ---
-<h2> A wide range of functions, including: 🔩</h2>
+<h2> 다음을 포함한 다양한 기능: 🔩</h2>
 
 ```c#
-- Windows activation
-- Disabling Windows Defender, SmartScreen, Antimalware, VBS, UAC 
-- Disabling Windows updates and clearing the downloaded cache
-- Disabling unused and unnecessary services 
-- Disabling spyware, keyloggers and telemetry Windows, NVIDIA
-- Blocking of spyware ip and domain names
-- Disabling Windows ads and banners, SCOOBE
-- Deleting OneDrive, Microsoft Edge and folders of these applications, Cortana, widgets
-- Removing pre-installed Windows 10/11 apps
-- Fixing the power supply of the Realtek High Definition Audio driver
-- Changing the Windows theme and applications, customizing the interface
-- Changing Windows parameters, power supply circuits
-- View the configuration and monitor the system
+-윈도우 활성화
+-윈도우 디펜더,스마트 스크린,맬웨어 방지,비비,유아크 비활성화 
+-윈도우 업데이트를 비활성화하고 다운로드 한 캐시를 삭제
+-사용하지 않고 불필요한 서비스 비활성화 
+-스파이웨어,키로거 및 원격 분석 윈도우,엔비디아 비활성화
+-스파이웨어 및 도메인 이름 차단
+-윈도우 광고 및 배너 비활성화,스쿠비
+-원 드라이브,마이크로 소프트 에지 이러한 응용 프로그램,마이크로 소프트 코타나,위젯의 폴더를 삭제
+-사전 설치된 윈도우 10/11 앱 제거
+-리얼텍 고화질 오디오 드라이버의 전원 공급 장치 고정
+-윈도우 테마 및 응용 프로그램 변경,인터페이스 사용자 정의
+-윈도우 매개 변수 변경,전원 공급 장치 회로
+-구성보기 및 시스템 모니터링
 ```
-## System Requirements
+## 시스템 요구 사항
 > [!WARNING]  
-> You will have to stop the antivirus before using it
+> 당신은 그것을 사용하기 전에 바이러스 백신을 중지해야합니다
 
 - .NET Framework 4.8
 - Windows 10 (1903+) and higher 
@@ -68,13 +68,13 @@
 
 </br>
 
-## Source ❤️ 
+## 출처 ❤️ 
 - GTweak - [@GTweak](https://github.com/Greedeks/GTweak)
 - Greedeks - [@Greedeks](https://github.com/Greedeks)
 
 </br>
 
-## Contact
+## 연락처
 [![github](https://img.shields.io/badge/Github-gray?style=for-the-badge&logo=github&logoColor=white)](https://github.com/XMontech1337X)
 [![telegram](https://img.shields.io/badge/Telegram-1DA1F2?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/XMontech1337X)
 [![steam](https://img.shields.io/badge/STEAM-042430?style=for-the-badge&logo=steam&logoColor=white)](https://steamcommunity.com/id/XMontech1337X)

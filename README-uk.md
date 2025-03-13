@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://github.com/XMontech1337X/MoonTweaker/blob/main/.github/Preview-en.png"/><br/><br/>
+<img src="https://github.com/XMontech1337X/MoonTweaker/blob/main/.github/Preview-uk.png"/><br/><br/>
  
 <div align="center" style="margin: 20px 0; text-align: center;">
  
@@ -14,7 +14,7 @@
 
 <!-- language --> 
 <div align="center">
-  <h1>🌍 Available Languages:</h1>
+  <h1>🌍 Доступні мови:</h1>
   <a href="https://github.com/XMontech1337X/MoonTweaker/blob/main/README.md">
     <img src="https://hatscripts.github.io/circle-flags/flags/us.svg" width="40">
   </a>
@@ -31,26 +31,26 @@
 </div>
 
 ---
-<h2> A wide range of functions, including: 🔩</h2>
+<h2> Широкий спектр функцій, включаючи: 🔩</h2>
 
 ```c#
-- Windows activation
-- Disabling Windows Defender, SmartScreen, Antimalware, VBS, UAC 
-- Disabling Windows updates and clearing the downloaded cache
-- Disabling unused and unnecessary services 
-- Disabling spyware, keyloggers and telemetry Windows, NVIDIA
-- Blocking of spyware ip and domain names
-- Disabling Windows ads and banners, SCOOBE
-- Deleting OneDrive, Microsoft Edge and folders of these applications, Cortana, widgets
-- Removing pre-installed Windows 10/11 apps
-- Fixing the power supply of the Realtek High Definition Audio driver
-- Changing the Windows theme and applications, customizing the interface
-- Changing Windows parameters, power supply circuits
-- View the configuration and monitor the system
+- Активація Windows
+- Відключення Захисника Windows, SmartScreen, захисту від шкідливих програм, VBS, UAC 
+- Відключення оновлень Windows і очищення завантаженого кешу
+- Відключення невикористовуваних і непотрібних служб 
+- Відключення програм-шпигунів, кейлоггерів і телеметрії Windows, NVIDIA
+- Блокування ip-адрес і доменних імен програм-шпигунів
+- Відключення реклами і банерів Windows, SCOOBE
+- Видалення OneDrive, Microsoft Edge і папок з цими додатками, Cortana, віджетів
+- Видалення попередньо встановлених програм Windows 10/11
+- Виправлення проблеми з живленням драйвера Realtek High Definition Audio
+- Зміна теми та додатків Windows, налаштування інтерфейсу
+- Зміна параметрів Windows, схем живлення
+- Перегляд конфігурації і моніторинг системи
 ```
-## System Requirements
+## Системні вимоги
 > [!WARNING]  
-> You will have to stop the antivirus before using it
+> Вам доведеться зупинити антивірус, перш ніж використовувати його
 
 - .NET Framework 4.8
 - Windows 10 (1903+) and higher 
@@ -68,13 +68,13 @@
 
 </br>
 
-## Source ❤️ 
+## Джерело ❤️ 
 - GTweak - [@GTweak](https://github.com/Greedeks/GTweak)
 - Greedeks - [@Greedeks](https://github.com/Greedeks)
 
 </br>
 
-## Contact
+## Контакт
 [![github](https://img.shields.io/badge/Github-gray?style=for-the-badge&logo=github&logoColor=white)](https://github.com/XMontech1337X)
 [![telegram](https://img.shields.io/badge/Telegram-1DA1F2?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/XMontech1337X)
 [![steam](https://img.shields.io/badge/STEAM-042430?style=for-the-badge&logo=steam&logoColor=white)](https://steamcommunity.com/id/XMontech1337X)
