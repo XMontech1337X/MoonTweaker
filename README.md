@@ -1,3 +1,6 @@
+> [!WARNING]  
+> The release will be on the 20th
+
 <div align="center">
 <img src="https://github.com/XMontech1337X/MoonTweaker/blob/main/.github/Preview-en.png"/><br/><br/>
  
