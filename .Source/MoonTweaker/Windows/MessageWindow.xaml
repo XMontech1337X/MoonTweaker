@@ -1,0 +1,68 @@
+﻿<Window x:Class="MoonTweaker.Windows.MessageWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MoonTweaker.Windows"
+        mc:Ignorable="d"
+        Title="MoonTweaker" WindowStyle="None"
+        Height="170" Width="370" ResizeMode="NoResize" SnapsToDevicePixels="True" UseLayoutRounding="True" Background="Transparent" AllowsTransparency="True" 
+        WindowStartupLocation="CenterScreen" Topmost="True" ShowInTaskbar="False" IsTabStop="False">
+    <Window.Clip>
+        <RectangleGeometry RadiusX="7" RadiusY="7" Rect="0,0,370,170"/>
+    </Window.Clip>
+
+    <Grid MouseDown="TitleBar_MouseDown">
+        <Grid Background="{StaticResource Color_Background}" Opacity="0.98">
+            <Rectangle Style="{StaticResource BordersRectangle}" d:Visibility="Collapsed"/>
+
+            <Grid Margin="0" Background="Transparent">
+                <Grid x:Name="CreateWarn" Visibility="Visible">
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Center" Height="140" Margin="20,10,0,0">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Width="25">
+                                <Image.Style>
+                                    <Style TargetType="Image">
+                                        <Setter Property="Source" Value="{StaticResource DI_Warning}"/>
+                                    </Style>
+                                </Image.Style>
+                            </Image>
+                            <TextBlock Text="{DynamicResource title_message}" Margin="10,0,0,0"  Foreground="{StaticResource Color_Highlighted}" Height="auto" Width="auto" FontFamily="{StaticResource Jura}" FontSize="20px" HorizontalAlignment="Left" TextAlignment="Center"/>
+                        </StackPanel>
+                        <TextBlock Foreground="{StaticResource Color_TetBlock_Inactivity}" Height="auto" Width="340" FontFamily="{StaticResource Jura}" FontSize="14px" TextWrapping="Wrap"
+                           HorizontalAlignment="Center" TextAlignment="Left" FontStretch="Medium" Margin="0,10,0,0">
+                                <Run Text="{DynamicResource text0_message}"/>
+                                <Run Text="{DynamicResource text1_message}" Foreground="{StaticResource Color_Accent}"/>
+                                <Run Text="{DynamicResource text2_message}"/>
+                        </TextBlock>
+                    </StackPanel>
+                </Grid>
+
+                <Grid x:Name="NoSupportWarn" Visibility="Hidden">
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Center" Height="140" Margin="20,10,0,0">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Width="25">
+                                <Image.Style>
+                                    <Style TargetType="Image">
+                                        <Setter Property="Source" Value="{StaticResource DI_Warning}"/>
+                                    </Style>
+                                </Image.Style>
+                            </Image>
+                            <TextBlock Text="{DynamicResource title_nosupport_message}" Margin="10,0,0,0"  Foreground="{StaticResource Color_Highlighted}" Height="auto" Width="auto" FontFamily="{StaticResource Jura}" FontSize="20px" HorizontalAlignment="Left" TextAlignment="Center"/>
+                        </StackPanel>
+                        <TextBlock Foreground="{StaticResource Color_TetBlock_Inactivity}" Height="auto" Width="340" FontFamily="{StaticResource Jura}" FontSize="15px" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left" FontStretch="Medium" Margin="0,10,0,0">
+                            <Run Text="{DynamicResource text0_nosupport_message}"/>
+                            <Run Text="{DynamicResource text1_nosupport_message}" Foreground="{StaticResource Color_Accent}"/>
+                            <Run Text="{DynamicResource text2_nosupport_message}"/>
+                        </TextBlock>
+                    </StackPanel>
+                </Grid>
+                
+                <Grid Grid.Row="2" VerticalAlignment="Bottom"  Margin="0,0,20,20">
+                    <TextBlock Text="{DynamicResource noty_message}" Foreground="{StaticResource Color_Inactive}" Height="auto" Width="auto" MaxWidth="350" FontFamily="{StaticResource Jura}" FontSize="12px" HorizontalAlignment="Left" TextAlignment="Center" Margin="20,5,0,0"/>
+                    <Button x:Name="BtnAccept" Content="{DynamicResource button_message}" Style="{StaticResource BtnDefault}" HorizontalAlignment="Right" VerticalAlignment="Top" Width="110" Height="30" Cursor="Hand" PreviewMouseDown="BtnAccept_PreviewMouseDown"/>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

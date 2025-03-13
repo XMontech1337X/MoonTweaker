@@ -1,0 +1,29 @@
+﻿<#@ template hostspecific="true" language="C#" #>
+<#@ output extension=".cs" #>
+using System.Reflection;
+using System.Runtime.InteropServices;
+using System.Windows;
+
+[assembly: AssemblyTitle("MoonTweaker")]
+[assembly: AssemblyDescription("Perfect setup of Windows 10 & Windows 11 with the choice of options you need for better convenience and performance")]
+[assembly: AssemblyProduct("MoonTweaker")]
+[assembly: AssemblyCopyright("© <#= DateTime.Now.Year #> XMontech1337X")]
+[assembly: AssemblyTrademark("XMontech1337X")]
+[assembly: AssemblyInformationalVersion("Build: 5.8.0")]
+[assembly: AssemblyVersion("5.<#= GenerateVersion() #>")]
+[assembly: AssemblyFileVersion("5.<#= GenerateVersion() #>")]
+
+[assembly: ComVisible(false)]
+
+[assembly: ThemeInfo(
+    ResourceDictionaryLocation.None,
+    ResourceDictionaryLocation.SourceAssembly
+)]
+<#+
+        private string GenerateVersion()
+        {
+            int major = (int)(DateTime.UtcNow - new DateTime(DateTime.UtcNow.Year, DateTime.UtcNow.Month, DateTime.UtcNow.Day)).TotalSeconds / 1000;
+            int revision = (int)(DateTime.UtcNow - DateTime.Now.Date).TotalSeconds % 1000;
+            return $"{1}.{major}.{revision}";
+        }
+#>
