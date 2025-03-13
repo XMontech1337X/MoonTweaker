@@ -59,7 +59,6 @@
 - Windows 10 (1903+) and higher 
 
 </br>
-
 ## NuGet Packages
 - [TaskScheduler](https://www.nuget.org/packages/TaskScheduler/)
 - [Costura](https://github.com/Fody/Costura)
