@@ -18,7 +18,7 @@ namespace MoonTweaker.View
     {
         private readonly DispatcherTimer timer;
         private TimeSpan time = TimeSpan.FromSeconds(0);
-        private string applicationName = string.Empty;
+        private string packageName = string.Empty;
 
         public PakagesView()
         {
@@ -56,17 +56,17 @@ namespace MoonTweaker.View
 
         private async void ClickApp_PreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
-            Image appImage = (Image)sender;
-            applicationName = appImage.Name;
+            Image pakageImage = (Image)sender;
+            packageName = pakageImage.Name;
 
             switch (e.LeftButton)
             {
-                case MouseButtonState.Pressed when appImage.Source == (DrawingImage)FindResource("A_DI_" + applicationName):
+                case MouseButtonState.Pressed when Equals(pakageImage.Source, FindResource("A_DI_" + packageName)):
                     {
                         timer.Stop();
 
                         BackgroundQueue backgroundQueue = new BackgroundQueue();
-                        await backgroundQueue.QueueTask(delegate { UninstallingPakages.DeletingPackage(applicationName); });
+                        await backgroundQueue.QueueTask(delegate { UninstallingPakages.DeletingPackage(packageName); });
 
                         await backgroundQueue.QueueTask(async delegate
                         {
@@ -74,17 +74,17 @@ namespace MoonTweaker.View
                             {
                                 await Dispatcher.InvokeAsync(() =>
                                 {
-                                    UninstallingPakages.PackagesDetails[appImage.Name] = (UninstallingPakages.PackagesDetails[appImage.Name].Alias, true, UninstallingPakages.PackagesDetails[appImage.Name].Scripts);
+                                    UninstallingPakages.HandleAvailabilityStatus(packageName, true);
                                     UpdateViewStatePakages();
                                 });
 
-                                await UninstallingPakages.DeletingPackage(applicationName);
+                                await UninstallingPakages.DeletingPackage(packageName);
 
                                 await Task.Delay(3000);
 
                                 await Dispatcher.InvokeAsync(() =>
                                 {
-                                    UninstallingPakages.PackagesDetails[appImage.Name] = (UninstallingPakages.PackagesDetails[appImage.Name].Alias, false, UninstallingPakages.PackagesDetails[appImage.Name].Scripts);
+                                    UninstallingPakages.HandleAvailabilityStatus(packageName, false);
                                     UpdateViewStatePakages();
                                 });
                             }
@@ -95,7 +95,7 @@ namespace MoonTweaker.View
                         break;
                     }
 
-                case MouseButtonState.Pressed when appImage.Source == (DrawingImage)FindResource("DA_DI_" + applicationName) && applicationName == "OneDrive":
+                case MouseButtonState.Pressed when Equals(pakageImage.Source, FindResource("DA_DI_" + packageName)) && packageName == "OneDrive":
                     {
                         timer.Stop();
 
@@ -108,7 +108,7 @@ namespace MoonTweaker.View
                             {
                                 await Dispatcher.InvokeAsync(() =>
                                 {
-                                    UninstallingPakages.PackagesDetails[appImage.Name] = (UninstallingPakages.PackagesDetails[appImage.Name].Alias, true, UninstallingPakages.PackagesDetails[appImage.Name].Scripts);
+                                    UninstallingPakages.HandleAvailabilityStatus(packageName, true);
                                     UpdateViewStatePakages();
                                 });
 
@@ -116,7 +116,7 @@ namespace MoonTweaker.View
 
                                 await Dispatcher.InvokeAsync(() =>
                                 {
-                                    UninstallingPakages.PackagesDetails[appImage.Name] = (UninstallingPakages.PackagesDetails[appImage.Name].Alias, false, UninstallingPakages.PackagesDetails[appImage.Name].Scripts);
+                                    UninstallingPakages.HandleAvailabilityStatus(packageName, false);
                                     UpdateViewStatePakages();
                                 });
                             }
@@ -136,8 +136,8 @@ namespace MoonTweaker.View
             static bool isContains(string pattern) => new Regex(pattern, RegexOptions.IgnoreCase | RegexOptions.CultureInvariant | RegexOptions.IgnorePatternWhitespace).IsMatch(UninstallingPakages.InstalledPackages);
 
             return !isOneDrive
-                ? !UninstallingPakages.PackagesDetails[packageName].IsUnavailable ? isContains(partName) ? (DrawingImage)FindResource($"A_DI_{packageName}") : (DrawingImage)FindResource($"DA_DI_{packageName}") : (DrawingImage)FindResource("DI_Sandtime")
-                : !UninstallingPakages.PackagesDetails[packageName].IsUnavailable ? UninstallingPakages.IsOneDriveInstalled ? (DrawingImage)FindResource($"A_DI_{packageName}") : (DrawingImage)FindResource($"DA_DI_{packageName}") : (DrawingImage)FindResource("DI_Sandtime");
+                ? !UninstallingPakages.HandleAvailabilityStatus(packageName) ? isContains(partName) ? (DrawingImage)FindResource($"A_DI_{packageName}") : (DrawingImage)FindResource($"DA_DI_{packageName}") : (DrawingImage)FindResource("DI_Sandtime")
+                : !UninstallingPakages.HandleAvailabilityStatus(packageName) ? UninstallingPakages.IsOneDriveInstalled ? (DrawingImage)FindResource($"A_DI_{packageName}") : (DrawingImage)FindResource($"DA_DI_{packageName}") : (DrawingImage)FindResource("DI_Sandtime");
         }
 
         private void UpdateViewStatePakages()
@@ -186,7 +186,7 @@ namespace MoonTweaker.View
             LinkedIn.Source = AvailabilityInstalledPackage("LinkedIn", "Microsoft.LinkedIn");
             WebMediaExtensions.Source = AvailabilityInstalledPackage("WebMediaExtensions", "Microsoft.WebMediaExtensions");
             OneConnect.Source = AvailabilityInstalledPackage("OneConnect", "Microsoft.OneConnect");
-            Edge.Source = AvailabilityInstalledPackage("Edge", "Microsoft.MicrosoftEdge.Stable");
+            Edge.Source = AvailabilityInstalledPackage("Edge", "");
         }
     }
 }

@@ -67,6 +67,18 @@ namespace MoonTweaker.Utilities.Tweaks
             ["OneDrive"] = (null, false, null)
         };
 
+        internal static bool HandleAvailabilityStatus(string key, bool? isUnavailable = null)
+        {
+            if (PackagesDetails.TryGetValue(key, out var details))
+            {
+                if (isUnavailable.HasValue)
+                    PackagesDetails[key] = (details.Alias, isUnavailable.Value, details.Scripts);
+
+                return details.IsUnavailable;
+            }
+            return false;
+        }
+
         internal async void ViewInstalledPackages() => InstalledPackages = await CommandExecutor.GetCommandOutput("Get-AppxPackage | Select-Object -ExpandProperty Name");
 
         internal static Task DeletingPackage(string packageName)
