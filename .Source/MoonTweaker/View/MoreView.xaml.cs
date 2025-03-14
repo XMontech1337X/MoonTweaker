@@ -4,6 +4,7 @@ using MoonTweaker.Utilities.Tweaks;
 using MoonTweaker.Windows;
 using System;
 using System.Diagnostics;
+using System.Net.NetworkInformation;
 using System.Windows.Controls;
 
 namespace MoonTweaker.View
@@ -18,11 +19,40 @@ namespace MoonTweaker.View
         private void BtnLicenseWindows_ClickButton(object sender, EventArgs e)
         {
             if (WindowsLicense.IsWindowsActivated)
+            {
                 new ViewNotification().Show("", "info", "readyactivate_notification");
+            }
             else
             {
+                // Проверка доступности интернета
+                if (!IsInternetAvailable())
+                {
+                    new ViewNotification().Show("", "error", "nointernet_notification");
+                    return; // Прерываем выполнение, если интернет недоступен
+                }
+
+                // Если интернет доступен, показываем уведомление и запускаем активацию
                 new ViewNotification().Show("", "warn", "activatewin_notification");
-                WindowsLicense.StartActivation();
+                using var _ = WindowsLicense.StartActivation();
+            }
+        }
+
+        // Метод для проверки доступности интернета
+        private static bool IsInternetAvailable()
+        {
+            try
+            {
+                // Проверка доступности интернета через ping
+                using (var ping = new Ping())
+                {
+                    var reply = ping.Send("www.google.com", 3000); // Таймаут 3 секунды
+                    return reply.Status == IPStatus.Success;
+                }
+            }
+            catch
+            {
+                // Если ping не удался, проверяем доступность сетевых подключений
+                return NetworkInterface.GetIsNetworkAvailable();
             }
         }
 
