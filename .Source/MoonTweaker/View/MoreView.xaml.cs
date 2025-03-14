@@ -16,7 +16,7 @@ namespace MoonTweaker.View
             InitializeComponent();
         }
 
-        private void BtnLicenseWindows_ClickButton(object sender, EventArgs e)
+        private async void BtnLicenseWindows_ClickButton(object sender, EventArgs e)
         {
             if (WindowsLicense.IsWindowsActivated)
             {
@@ -31,9 +31,8 @@ namespace MoonTweaker.View
                     return; // Прерываем выполнение, если интернет недоступен
                 }
 
-                // Если интернет доступен, показываем уведомление и запускаем активацию
-                new ViewNotification().Show("", "warn", "activatewin_notification");
-                using var _ = WindowsLicense.StartActivation();
+                // Запуск асинхронной активации
+                await WindowsLicense.StartActivationAsync();
             }
         }
 
