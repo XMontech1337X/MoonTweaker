@@ -53,7 +53,8 @@
 > 당신은 그것을 사용하기 전에 바이러스 백신을 중지해야합니다
 
 - .NET Framework 4.8
-- Windows 10 (1903+) and higher 
+- Windows 10 (1903+) and higher
+- Minimum screen resolution: 1280×720 (HD) 
 
 </br>
 
