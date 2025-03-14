@@ -53,7 +53,8 @@
 > You will have to stop the antivirus before using it
 
 - .NET Framework 4.8
-- Windows 10 (1903+) and higher 
+- Windows 10 (1903+) and higher
+- Minimum screen resolution: 1280×720 (HD)
 
 </br>
 
