@@ -9,7 +9,7 @@ using System.Windows;
 [assembly: AssemblyProduct("MoonTweaker")]
 [assembly: AssemblyCopyright("© <#= DateTime.Now.Year #> XMontech1337X")]
 [assembly: AssemblyTrademark("XMontech1337X")]
-[assembly: AssemblyInformationalVersion("Build: 5.8.2")]
+[assembly: AssemblyInformationalVersion("Build: 5.8.4")]
 [assembly: AssemblyVersion("5.<#= GenerateVersion() #>")]
 [assembly: AssemblyFileVersion("5.<#= GenerateVersion() #>")]
 
