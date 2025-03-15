@@ -45,16 +45,6 @@ namespace MoonTweaker.Utilities.Tweaks
 
                 // Проверка статуса активации
                 new WindowsLicense().LicenseStatus();
-
-                // Отображение уведомления о результате активации
-                if (IsWindowsActivated)
-                {
-                    new ViewNotification(300).Show("restart", "warn", "successactivate_notification");
-                }
-                else
-                {
-                    new ViewNotification(300).Show("", "warn", "notsuccessactivate_notification");
-                }
             }
             catch (Exception ex)
             {
